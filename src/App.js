@@ -23,7 +23,7 @@ class App extends React.Component{
           <ReactMarkdown plugins={[gfm]} source={markdown} />
         </div>
         <div class="footer">
-          <p>2021 | Jenny</p>
+          <p>2021   |   Jenny</p>
         </div>
       </div>
     )
