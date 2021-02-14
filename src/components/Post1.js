@@ -1,10 +1,11 @@
 import React from 'react';
-import Post from './Post.md';
+import Post from '../Post1.md';
 import ReactMarkdown from 'react-markdown';
-import './App.css';
-import gfm from 'remark-gfm'
+import '../Post.css';
+import gfm from 'remark-gfm';
+import { Link } from "react-router-dom";
 
-class App extends React.Component{
+class Post1 extends React.Component{
   constructor(){
     super();
     this.state = { markdown: '' };
@@ -16,17 +17,22 @@ class App extends React.Component{
     const {markdown} = this.state;
     return (
       <div>
-        <div class="header">
+        <div className="header">
+          <div className="navigation">
+            <Link to="/"><button>Home</button></Link>
+            <Link to="/post1"><button className="active">Read Post #1</button></Link>
+            <Link to="/post2"><button>Read Post #2</button></Link>
+          </div>
           <h2>Blog Post #1</h2>
         </div>
         <div className="container">
           <ReactMarkdown plugins={[gfm]} source={markdown} />
         </div>
-        <div class="footer">
+        <div className="footer">
           <p>2021   |   Jenny</p>
         </div>
       </div>
     )
   }
 }
-export default App;
+export default Post1;
