@@ -6,7 +6,7 @@ import gfm from 'remark-gfm';
 import { Link } from "react-router-dom";
 
 const Post2 = () => {
-  const [markdown, setMarkdown] = useState();
+  const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
     fetch(Post).then(res => res.text()).then(text => setMarkdown(text));

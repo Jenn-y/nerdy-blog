@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Post from '../Post1.md';
+import Post from "../Post1.md";
 import ReactMarkdown from 'react-markdown';
 import '../Post.css';
 import gfm from 'remark-gfm';
 import { Link } from "react-router-dom";
 
 const Post1 = () => {
-  const [markdown, setMarkdown] = useState();
+  const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
     fetch(Post).then(res => res.text()).then(text => setMarkdown(text));
